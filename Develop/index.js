@@ -8,7 +8,7 @@ const SVGtoFont = require ('svgtofont')
 //Creates an array of questions for user
 
 inquirer
-  .prompt
+  .prompt([
     {
       type: 'input',
       message: 'What is your first and last name?',
@@ -25,13 +25,19 @@ inquirer
       choices: ['circle', 'triangle', 'shape'],
       name: 'shape',
     },
+    {
+      type: 'choice',
+      message: 'Please choose your shape color',
+      choices: ['green', 'blue', 'purple'],
+      name: 'shape',
+      },
+    ])
    
-   
-  .then((response) =>{
-  const filename = `${response.name.toLowerCase().split(' ').join('')}.json`;
-  // TODO: Create a function to write README file
-  console.log(response)
-  fs.writeFile("README.md",generateMarkdown(response), err=> {
-      err?console.log(err):console.log("success")
-  })
-  })
+//   .then((response) =>{
+//   const filename = `${response.name.toLowerCase().split(' ').join('')}.json`;
+//   // TODO: Create a function to write README file
+//   console.log(response)
+//   fs.writeFile("README.md",generateMarkdown(response), err=> {
+//       err?console.log(err):console.log("success")
+//   })
+//   })
