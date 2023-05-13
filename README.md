@@ -21,8 +21,7 @@ SO THAT I don't have to pay a graphic designer
 
 ```md
 GIVEN a command-line application that accepts user input
-WHEN I am prompted for text
-THEN I can enter up to three characters
+P
 WHEN I am prompted for the text color
 THEN I can enter a color keyword (OR a hexadecimal number)
 WHEN I am prompted for a shape
