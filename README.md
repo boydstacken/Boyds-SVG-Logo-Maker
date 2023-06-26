@@ -1,167 +1,53 @@
+# Boyd's SVG Logo Maker
 
-# 10 Object-oriented Programming: SVG Logo Maker
+## Description
 
-## Your Task
+The motivation to for this application was to provide user-input utilizing command-lines by answering prompts (to craft the actual shape, color, and text) with specific input generate a logo sand save it as an SVG file.
 
-Your task is to build a Node.js command-line application that takes in user input to generate a logo and save it as an [SVG file](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics). The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file.
+## Table of Contents
 
-Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and passes all of the tests. You’ll need to submit a link to the video **and** add it to the README of your project.
+-[Installation](#installation)
+-[Usage](#usage)
+-[Credits](#credits)
+-[License](#license)
+-[Questions](#questions)
 
-Refer to the [Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) on the Full-Stack Blog for additional guidance on creating a video.
+## Installation
 
-> **Note**: There is no starter code for this assignment.
-### User Story
+Do a npm install in the terminal to get all the npm packages.
 
-```md
-AS a freelance web developer
-I WANT to generate a simple logo for my projects
-SO THAT I don't have to pay a graphic designer
-```
+Ensure you have other proper packages included to run this application (inquirer, fs, jest, SVGtoFont, and SVG). All essential to create your custom application. 
 
-## Acceptance Criteria
+Create an example folder where the user's generated SVG file ecan store and you can view how user in put is displayed. Try all 3 different shapes, colors, and inpuy your text to get the desired result.
 
-```md
-GIVEN a command-line application that accepts user input
-P
-WHEN I am prompted for the text color
-THEN I can enter a color keyword (OR a hexadecimal number)
-WHEN I am prompted for a shape
-THEN I am presented with a list of shapes to choose from: circle, triangle, and square
-WHEN I am prompted for the shape's color
-THEN I can enter a color keyword (OR a hexadecimal number)
-WHEN I have entered input for all the prompts
-THEN an SVG file is created named `logo.svg`
-AND the output text "Generated logo.svg" is printed in the command line
-WHEN I open the `logo.svg` file in a browser
-THEN I am shown a 300x200 pixel image that matches the criteria I entered
-```
+Record the walkthrough of the user prompts in node js, jest, and store the file link in the README.
 
-## Mock-Up
+## Usage
 
-The following image shows a mock-up of the generated SVG given the following input entered by the user: `SVG` for the text, `white` for the text color, `circle` from the list of shapes, and `green` for the shape color. Note that this is just an image of the output SVG and not the SVG file itself:
+Here's a quick video link on how to use this application: https://drive.google.com/file/d/1_-dHBcFrTgt44eECPXNEXmGxyMkS52xy/view
 
-![Image showing a green circle with white text that reads "SVG.".](./Images/10-oop-homework-demo.png)
 
-## Additional Requirements
+Install npm packages, in the index.js file include packages for application (inquirer, fs, jest, SVGtoFont, and SVG ), create am object for the shapes (circle, triangle, and square). Implment iquirer prompt with criteria for the different ques to create a .then response file and a switch method to return the shapes, colors and text with a SVG file generated from a from function using "fs". Use console log along the way to test for errors for this portion.
 
-This Challenge combines many of the skills covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help you get started.
+Develop a shapes.js file with a class Shape with constructors followed by individual classes for each shape (circle, triangle. and square).
 
-Because this Challenge requires a video submission, refer to the [Full-Stack Blog video submission guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for guidance on creating and sharing a video.
+Finally, establish a shapes.test.js file with your code and perform a "run npm test" to successfully test your code for functionality and troubleshooting to find solutions. 
 
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer/v/8.2.4) for collecting input from the user. The application will be invoked by using the following command:
+After code is implemented, run the cmd "node index.js" in the terminal in your working path directory, complete the prompts and view the generated SVG file that should resemble the desired look. 
 
-```bash
-node index.js
-```
+## Credits
 
-It is recommended that you start with a directory structure that looks like the following example:
+Boyd Stacken
+Github Profile: https://github.com/boydstacken
 
-```md
-.  
-├── examples/           // Example svg file(s) created with the app
-├── lib/                // Folder for classes or functions
-    ├── shapes.js       // Exports `Triangle`, `Circle`, and `Square` classes
-    ├── shapes.test.js  // Jest tests for shapes
-    └── more...         // Additional files and tests
-├── .gitignore          // Indicates which folders and files Git should ignore
-├── index.js            // Runs the application using imports from lib/
-├── package.json
-└── README.md           // App description, link to video, setup and usage instructions           
-```
+## License
 
-> **Important**: Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository.
-The application must include `Triangle`, `Circle`, and `Square` classes, as well as tests for each of these classes using Jest. While not a requirement, it is recommended that you place any common functionality and properties shared by the `Triangle`, `Circle`, and `Square` classes in a parent `Shape` class and use inheritance to reuse the code in the child classes.
+n/a
 
-Each shape class should be tested for a `render()` method that returns a string for the corresponding SVG file with the given shape color.
+## Questions
 
-The following example test should pass:
+If you have any questions about this Professional README Generator, please contact boydstacken@icloud.com with any futher inquiries.
 
-```js
-const shape = new Triangle();
-shape.setColor("blue");
-expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
-```
+## Video Tutorial
 
-You may need to add additional files in the `lib` folder for handling user input, writing to a file, etc. Writing tests for these additional files is **optional**.
-
-## Helpful SVG Resources
-
-* [Example SVG](https://static.fullstack-bootcamp.com/fullstack-ground/module-10/circle.svg)
-
-* [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
-
-* [SVG tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
-
-* [Basic SVG shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes)
-
-* [Text in SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Texts)
-
-* [SVG VS Code extension](https://marketplace.visualstudio.com/items?itemName=jock.svg)
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 15%
-
-* At least one sample SVG file generated using the application must be submitted.
-
-* Your GitHub repository containing your application code.
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the functionality of the SVG logo maker and passing tests must be submitted.
-
-* The `README.md` file must include a link to the walkthrough video.
-
-* The walkthrough video must show all tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-* The walkthrough video must demonstrate how a user would enter responses to all of the prompts in the application.
-
-* The walkthrough video must demonstrate a generated SVG file, showing the file being opened in the browser. The image in the browser must reflect the choices made by the user (text, shape, and colors).
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-  * Uses the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4).
-
-  * Uses the [Jest package](https://www.npmjs.com/package/jest) for a suite of unit tests.
-
-  * The application must have `Triangle`, `Square`, and `Circle` classes.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video that demonstrates the functionality of the application and passing tests.
-
-* At least one sample SVG file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
----
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+Here is the link with the tutorial on how to use this aplicaiton: https://drive.google.com/file/d/1_-dHBcFrTgt44eECPXNEXmGxyMkS52xy/view
